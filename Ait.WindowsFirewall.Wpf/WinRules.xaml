@@ -1,0 +1,49 @@
+﻿<Window x:Class="Ait.WindowsFirewall.Wpf.WinRules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ait.WindowsFirewall.Wpf"
+        mc:Ignorable="d"
+        Title="All Window Firewall Rules" Height="578" Width="1180" WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Button x:Name="btnNewRule" Content="Maak nieuwe Firewall Rule aan ..." HorizontalAlignment="Left" Margin="349,9,0,0" VerticalAlignment="Top" Width="191"  Height="31" Click="BtnNewRule_Click"/>
+        <ListBox x:Name="lstRules" HorizontalAlignment="Left" Height="363" Margin="10,46,0,0" VerticalAlignment="Top" Width="311" SelectionChanged="LstRules_SelectionChanged"/>
+        <RadioButton x:Name="rdbInboundRules" Content="Inbound rules" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" UseLayoutRounding="False" Checked="RdbInboundRules_Checked"/>
+        <RadioButton x:Name="rdbOutboundRules" Content="Outbound rules" HorizontalAlignment="Left" Height="20" Margin="137,10,0,0" VerticalAlignment="Top" Width="100" UseLayoutRounding="False" Checked="RdbOutboundRules_Checked"/>
+        <GroupBox x:Name="grpDetails" Header="Detailgegevens Firewall Rule" HorizontalAlignment="Left" Height="385" Margin="349,46,0,0" VerticalAlignment="Top" Width="800">
+            <Grid>
+                <Label  Content="Naam" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtFirewallRuleName" HorizontalAlignment="Left" Height="23" Margin="103,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Profiel" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <CheckBox x:Name="chkProfielDomein" Content="Domein" HorizontalAlignment="Left" Height="16" Margin="103,100,0,0" VerticalAlignment="Top" Width="100"/>
+                <CheckBox x:Name="chkProfielPrive" Content="Privé" HorizontalAlignment="Left" Height="16" Margin="208,100,0,0" VerticalAlignment="Top" Width="100"/>
+                <CheckBox x:Name="chkProfielOpenbaar" Content="Openbaar" HorizontalAlignment="Left" Height="16" Margin="327,100,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label  Content="Actief" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <CheckBox x:Name="chkIsActief" Content="" HorizontalAlignment="Left" Height="16" Margin="103,131,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label  Content="Bewerking" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <CheckBox x:Name="chkActionAllow" Content="Toelaten" HorizontalAlignment="Left" Margin="103,161,0,0" VerticalAlignment="Top" Background="#FF94DA4E"/>
+                <CheckBox x:Name="chkActionBlock" Content="Blokkeren" HorizontalAlignment="Left" Margin="208,161,0,0" VerticalAlignment="Top" Background="#FFE63D22">
+
+                </CheckBox>
+                <Label  Content="Programma" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <TextBox x:Name="txtProgramma" HorizontalAlignment="Left" Height="23" Margin="103,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Lokaal adres" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <Label  Content="Extern adres" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <TextBox x:Name="txtLokaalAdres" HorizontalAlignment="Left" Height="23" Margin="103,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <TextBox x:Name="txtExternAdres" HorizontalAlignment="Left" Height="23" Margin="103,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Lokale poorten" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <TextBox x:Name="txtLokalePoorten" HorizontalAlignment="Left" Height="23" Margin="103,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Externe poorten" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <TextBox x:Name="txtExternePoorten" HorizontalAlignment="Left" Height="23" Margin="103,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Protocol" HorizontalAlignment="Left" Margin="10,328,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+                <TextBox x:Name="txtProtocol" HorizontalAlignment="Left" Height="23" Margin="103,333,0,-15" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+                <Label  Content="Beschrijving" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblBeschrijving" Content="" HorizontalAlignment="Left" Margin="103,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.038"/>
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="Ait.WindowsFirewall.Wpf.WinAddRule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ait.WindowsFirewall.Wpf"
+        mc:Ignorable="d"
+        Title="winAddRule" Height="643.648" Width="885.758" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Height="25" Margin="122,18,0,0" VerticalAlignment="Top" Width="675"/>
+        <Label Content="Type" HorizontalAlignment="Left" Height="27" Margin="15,16,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label  Content="Naam" HorizontalAlignment="Left" Margin="15,51,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFirewallRuleName" HorizontalAlignment="Left" Height="23" Margin="122,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+        <Label  Content="Beschrijving" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBeschrijving" HorizontalAlignment="Left" Height="70" Margin="122,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="675"/>
+        <Label  Content="Profiel" HorizontalAlignment="Left" Margin="15,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <CheckBox x:Name="chkProfielDomein" Content="Domein" HorizontalAlignment="Left" Height="16" Margin="125,169,0,0" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="chkProfielPrive" Content="Privé" HorizontalAlignment="Left" Height="16" Margin="204,169,0,0" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="chkProfielOpenbaar" Content="Openbaar" HorizontalAlignment="Left" Height="16" Margin="275,169,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label  Content="Actief" HorizontalAlignment="Left" Margin="15,194,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <CheckBox x:Name="chkIsActief" Content="" HorizontalAlignment="Left" Height="16" Margin="125,198,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label  Content="Bewerking" HorizontalAlignment="Left" Margin="15,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <RadioButton x:Name="rdbAllow" Content="Toelaten" HorizontalAlignment="Left" Margin="125,228,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdbBlock" Content="Blokkeren" HorizontalAlignment="Left" Margin="204,228,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Programma" HorizontalAlignment="Left" Margin="15,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <TextBox x:Name="txtProgramma" HorizontalAlignment="Left" Height="23" Margin="125,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="627"/>
+        <Button x:Name="btnProgramma" Content="..." HorizontalAlignment="Left" Margin="757,249,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.22,0.493" Height="23" Click="BtnProgramma_Click"/>
+        <Label Content="Laat leeg indien van toepassing voor alle programma's" HorizontalAlignment="Left" Margin="125,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,0.336" Width="627" FontStyle="Italic" Foreground="Silver"/>
+        <Label  Content="Lokaal adres" HorizontalAlignment="Left" Margin="15,295,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <TextBox x:Name="txtAdresLokaal" HorizontalAlignment="Left" Height="23" Margin="125,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="627"/>
+        <Label Content="leeg = alle adressen, bv 192.168.0.51 voor 1 adres, bv 192.168.0.100-192.168.0.101 voor groep van adressen
+               " HorizontalAlignment="Left" Margin="125,321,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,0.336" Width="627" FontStyle="Italic" Foreground="Silver"/>
+        <Label  Content="Extern adres" HorizontalAlignment="Left" Margin="15,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <TextBox x:Name="txtAdresExtern" HorizontalAlignment="Left" Height="23" Margin="125,347,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="627"/>
+        <Label Content="leeg = alle adressen, bv 8.8.8.8 voor 1 adres, bv 8.8.8.0-8.8.8.255 voor groep van adressen                " HorizontalAlignment="Left" Margin="125,370,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,0.336" Width="627" FontStyle="Italic" Foreground="Silver"/>
+        <Label  Content="Lokale poorten" HorizontalAlignment="Left" Margin="15,397,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <TextBox x:Name="txtPoortLokaal" HorizontalAlignment="Left" Height="23" Margin="125,401,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="627"/>
+        <Label Content="leeg = alle poorten, bv 80 voor 1 poort, bv 80, 443, 5000-5010 voor meerder poorten" HorizontalAlignment="Left" Margin="125,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,0.336" Width="627" FontStyle="Italic" Foreground="Silver"/>
+        <Label  Content="Externe poorten" HorizontalAlignment="Left" Margin="15,446,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <TextBox x:Name="txtPoortExtern" HorizontalAlignment="Left" Height="23" Margin="125,450,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="627"/>
+        <Label Content="leeg = alle poorten, bv 80 voor 1 poort, bv 80, 443, 5000-5010 voor meerder poorten" HorizontalAlignment="Left" Margin="125,473,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.041,0.336" Width="627" FontStyle="Italic" Foreground="Silver"/>
+        <Label  Content="Protocol" HorizontalAlignment="Left" Margin="15,500,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,2.154"/>
+        <ComboBox x:Name="CmbProtocol" HorizontalAlignment="Left" Height="25" Margin="125,501,0,0" VerticalAlignment="Top" Width="675"/>
+        <Button x:Name="btnCreate" Content="Rule aanmaken" HorizontalAlignment="Left" Margin="15,558,0,0" VerticalAlignment="Top" Width="183" Height="37" Click="BtnCreate_Click"/>
+
+    </Grid>
+</Window>
