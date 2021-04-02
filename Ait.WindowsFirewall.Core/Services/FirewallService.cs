@@ -69,6 +69,7 @@ namespace Ait.WindowsFirewall.Core.Services
                 if (remotePorts != "")
                     firewallRule.RemotePorts = remotePorts;
                 firewallRule.Enabled = enabled;
+                
             }
             catch 
             {

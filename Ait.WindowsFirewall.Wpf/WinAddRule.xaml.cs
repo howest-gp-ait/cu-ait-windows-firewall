@@ -109,7 +109,7 @@ namespace Ait.WindowsFirewall.Wpf
             }
             else
             {
-                success = firewallService.CreateInboundRule(name, description, profileValue, enabled, typeOfRule, application, localAdresses, remoteAdresses, localPorts, remotePorts, protocol.Value);
+                success = firewallService.CreateOutboundRule(name, description, profileValue, enabled, typeOfRule, application, localAdresses, remoteAdresses, localPorts, remotePorts, protocol.Value);
             }
             if (success)
             {
